@@ -1,7 +1,8 @@
 # LMR51450 Based 7.6V, 4A DC-DC Buck Converter
-
+---
 A 2-layer PCB design for a synchronous step-down (buck) converter based on the Texas Instruments' LMR51450. This project is designed to be a power supply for general-purpose electronics, capable of operating over a wide input voltage range.
 
+---
 ## Key Specifications
 
 | Parameter | Value |
@@ -12,6 +13,7 @@ A 2-layer PCB design for a synchronous step-down (buck) converter based on the T
 | **Switching Frequency** | 500 kHz |
 | **IC** | LMR51450SDRRR |
 
+---
 ## Hardware
 
 The design is revolves around the LMR51450 IC and a power inductor suitable for the required current.
@@ -22,6 +24,27 @@ The design is revolves around the LMR51450 IC and a power inductor suitable for 
 
 A complete list of all components, including specific part numbers for resistors and capacitors, is available in the Bill of Materials.
 
+---
+## Project Structure
+```
+Buck_Converter_Project/
+│
+├── Files/
+│   ├── Buck_Converter.csv.xlsx
+│   ├── Buck_Converter.kicad_pcb
+│   ├── Buck_Converter.kicad_pro
+│   ├── Buck_Converter.kicad_sch
+│   └── Buck_converter_BOM.pdf
+│
+├── Media/
+│   ├── PCB.png
+│   ├── PCB_bottom.png
+│   ├── PCB_top_layer.png
+│   └── Schematic.png
+│
+└── README.md
+```
+---
 ## Key Design Equations
 
 The primary component values were determined using the following formulas from the LMR51450 datasheet.
@@ -63,7 +86,7 @@ The output capacitance ($C_{OUT}$) is chosen to meet requirements for both outpu
     ```math
     C_{OUT} > \frac{1}{2} \times \frac{6 \times (I_{OH} - I_{OL})}{f_{SW} \times \Delta V_{OUT\_SHOOT}}
     ```
-
+---
 ## Design Files
 
 This repository contains all the necessary files to review and manufacture the project, designed in KiCad.
@@ -74,6 +97,7 @@ This repository contains all the necessary files to review and manufacture the p
 * **`Buck_Converter_BOM.pdf`**: Bill of Materials (BOM) in pdf format.
 * **`Media/`**: A folder containing screenshots of the final schematic and PCB layout.
 
+---
 ## Design Notes & Layout Strategy
 
 This project was designed with a focus on robustness and performance, following best practices for switching power supply layout.
@@ -85,6 +109,7 @@ This project was designed with a focus on robustness and performance, following 
 * **Thermal Management:** A dense grid of thermal vias is placed directly on the central thermal pad of the LMR51450 IC, connecting it to the bottom ground plane to effectively dissipate heat. Additional "stitching" vias are used throughout the board to strongly connect the top and bottom ground planes.
 * **Routing:** All high-current connections were made with copper pours. Only the low-power signal traces for the feedback network were routed as thin traces.
 
+---
 ## Media
 
 *(**Instructions:** Replace these placeholders with your final screenshots inside the `Media` folder.)*
@@ -95,5 +120,6 @@ This project was designed with a focus on robustness and performance, following 
 **PCB Layout (Top and Bottom Layers):**
 ![PCB Layout](Media/PCB.png)
 
+---
 
 
